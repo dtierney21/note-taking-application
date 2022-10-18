@@ -12,6 +12,6 @@ router.get('/notes', (req, res) => {
 });
 
 // Wildcard route to direct users to the homepage
-app.get('*', (req, res) => res.sendFile(path.join(__dirname, 'public/pages/index.html')));
+router.get('*', (req, res) => res.sendFile(path.join(__dirname, '../../public/index.html')));
 
 module.exports = router;
