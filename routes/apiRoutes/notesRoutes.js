@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const notes = require('../../db/db');
 const fs = require('fs');
 
 // retrieve exisitng notes from db
@@ -17,7 +16,6 @@ router.post('/notes', (req, res) => {
         const note = {
             title: req.body.title,
             text: req.body.text,
-            id: uuidv1(),
         };
         console.log(note);
         res.json(note);
