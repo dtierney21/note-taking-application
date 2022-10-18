@@ -1,6 +1,7 @@
 // Import express and routes
 const express = require('express');
-const htmlRoutes = require('./routes/htmlRoutes.js');
+const apiRoutes = require('./routes/apiRoutes');
+const htmlRoutes = require('./routes/htmlRoutes');
 
 // Set the port to the one specified in the .env file or 3001
 const PORT = process.env.port || 3001;
@@ -13,6 +14,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Direct the app to the routes
+app.use('/api', apiRoutes);
 app.use('/', htmlRoutes);
 
 // Direct the app to the public content
